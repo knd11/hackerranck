@@ -1,37 +1,276 @@
+## 0. Hello,World
+
+![0](pic/0.png)
+
+```java
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+	public static void main(String[] args) {
+        // Create a Scanner object to read input from stdin.
+		Scanner scan = new Scanner(System.in); 
+		
+		// Read a full line of input from stdin and save it to our variable, inputString.
+		String inputString = scan.nextLine(); 
+
+		// Close the scanner object, because we've finished reading 
+        // all of the input from stdin needed for this challenge.
+		scan.close(); 
+      
+		// Print a string literal saying "Hello, World." to stdout.
+		System.out.println("Hello, World.");
+        System.out.println(inputString);
+	    // TODO: Write a line of code here that prints the contents of inputString to stdout.
+	}
+}
+```
+
+## 1. Data Types
+
+![1](pic/1.png)
+
+```java
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+	
+    public static void main(String[] args) {
+        int i = 4;
+        double d = 4.0;
+        String s = "HackerRank ";
+		
+        Scanner scan = new Scanner(System.in);
+
+        /* Declare second integer, double, and String variables. */
+
+        /* Read and save an integer, double, and String to your variables.*/
+        // Note: If you have trouble reading the entire String, please go back and review the Tutorial closely.
+        
+        /* Print the sum of both integer variables on a new line. */
+
+        /* Print the sum of the double variables on a new line. */
+		
+        /* Concatenate and print the String variables on a new line; 
+        	the 's' variable above should be printed first. */
+        
+        int In1 = 0;
+        double In2 = 0.0;
+        String In3 = "";
+
+        In1 = scan.nextInt();
+        System.out.println(In1 + i);
+
+        In2 = scan.nextDouble();
+        System.out.println(In2 + d);
+
+        In3 = s;
+        while (scan.hasNextLine()) {
+            In3 = In3 + scan.nextLine();
+        }
+        System.out.println(In3);
+
+ 
+        scan.close();
+    }
+}
+```
+
+## 2. Operators
+
+![2](pic/2.png)
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the solve function below.
+    static void solve(double meal_cost, int tip_percent, int tax_percent) {
+        double Res = meal_cost*(1 + tip_percent/100.0 + tax_percent/100.0);
+        System.out.print((int)Math.round(Res));
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        double meal_cost = scanner.nextDouble();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int tip_percent = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int tax_percent = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        solve(meal_cost, tip_percent, tax_percent);
+        scanner.close();
+    }
+}
+
+```
+
+## 3. Intro to Conditional Statements
+
+![3](pic/3.png)
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        if(N%2==1)
+            System.out.print("Weird");
+        else{
+            if(N>=2 && N<5)
+                System.out.print("Not Weird");
+            else if(N>=6 && N<=20)
+                System.out.print("Weird");
+            else if(N>20)
+                System.out.print("Not Weird");
+        }
+        scanner.close();
+    }
+}
+
+```
+
+## 4. Class vs. Instance
+
+![4](pic/4.png)
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Person {
+    private int age;	
+
+	public Person(int initialAge) {
+  		// Add some more code to run some checks on initialAge
+        if(initialAge<0 || initialAge>30)
+        {
+            initialAge = 0;
+            System.out.println("Age is not valid, setting age to 0.");
+        }
+        age = initialAge;
+	} 
+
+	public void amIOld() {
+  		// Write code determining if this person's age is old and print the correct statement:
+        if(age<13)
+            System.out.println("You are young.");   
+        else if(age>=13 && age<18)
+            System.out.println("You are a teenager.");  
+        else
+            System.out.println("You are old.");
+	}
+
+	public void yearPasses() {
+  		// Increment this person's age.
+          age++;
+	}
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for (int i = 0; i < T; i++) {
+			int age = sc.nextInt();
+			Person p = new Person(age);
+			p.amIOld();
+			for (int j = 0; j < 3; j++) {
+				p.yearPasses();
+			}
+			p.amIOld();
+			System.out.println();
+        }
+		sc.close();
+    }
+}
+```
+
+## 5. Loops
+
+![5](pic/5.png)
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        for(int i=1;i<=10;i++){
+            System.out.println(n + " x " + i + " = " + n*i);
+        }
+        scanner.close();
+    }
+}
+
+```
+
+## 6. Let's Review
+
+![6](pic/6.png)
+
+```python
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+def ss_print(string):
+    s_odd = s_even = ''
+    for i in range(0,len(string)):
+        if i%2 != 0 :
+            s_odd = s_odd + string[i]
+        if i%2 == 0 or i == 0:
+            s_even = s_even + string[i]
+        i = i + 1
+    print(s_even + " " + s_odd)
+
+ii = int(input())
+for j in range(0,ii):
+    s = input()
+    ss_print(s)
+```
+
 ## 7. Arrays
 
-**Objective**
-Today, we're learning about the *Array* data structure. Check out the [Tutorial](https://www.hackerrank.com/challenges/30-arrays/tutorial) tab for learning materials and an instructional video!
-
-**Task**
-Given an array, , of  integers, print 's elements in *reverse* order as a single line of space-separated numbers.
-
-**Input Format**
-
-The first line contains an integer,  (the size of our array).
-The second line contains  space-separated integers describing array 's elements.
-
-**Constraints**
-
-- 1  $ \leq$ N $\leq$ 1000
-- 1  $ \leq$ $A_i$ $\leq$ 10000, where $A_i$  is the  integer in the array.
-
-**Output Format**
-
-Print the elements of array  in reverse order as a single line of space-separated numbers.
-
-**Sample Input**
-
-```
-4
-1 4 3 2
-```
-
-**Sample Output**
-
-```
-2 3 4 1
-```
+![7](pic/7.png)
 
 ```Java
 import java.io.*;
@@ -70,72 +309,9 @@ public class Solution {
 }
 ```
 
-
-
 ## 8.  Dictionaries and Maps
 
-**Objective**
-Today, we're learning about Key-Value pair mappings using a *Map* or *Dictionary* data structure. Check out the [Tutorial](https://www.hackerrank.com/challenges/30-dictionaries-and-maps/tutorial) tab for learning materials and an instructional video!
-
-**Task**
-Given  names and phone numbers, assemble a phone book that maps friends' names to their respective phone numbers. You will then be given an unknown number of names to query your phone book for. For each name queried, print the associated entry from your phone book on a new line in the form name =phoneNumber; if an entry for  name is not found, print Not found instead.
-
-**Note:** Your phone book should be a Dictionary/Map/HashMap data structure.
-
-**Input Format**
-
-The first line contains an integer **n** , denoting the number of entries in the phone book.
-Each of the  subsequent n lines describes an entry in the form of **2** space-separated values on a single line. The first value is a friend's name, and the second value is an **8**-digit phone number.
-
-After the  n lines of phone book entries, there are *an unknown number of lines of queries*. Each line (query) contains a name to look up, and you must continue reading lines until there is no more input.
-
-**Note:** Names consist of lowercase English alphabetic letters and are *first names* only.
-
-**Constraints**
-
-- 1  $ \leq$ n $\leq$ $10^{-5}$
-- 1  $ \leq$ queries $\leq$ $10^{5}$
-
-**Output Format**
-
-On a new line for each query, print `Not found` if the name has no corresponding entry in the phone book; otherwise, print the full  and  in the format `name=phoneNumber`.
-
-**Sample Input**
-
-```
-3
-sam 99912222
-tom 11122222
-harry 12299933
-sam
-edward
-harry
-```
-
-**Sample Output**
-
-```
-sam=99912222
-Not found
-harry=12299933
-```
-
-**Explanation**
-
-We add the following  *(Key,Value)* pairs to our map so it looks like this:
-
-
-
-We then process each query and print `key=value` if the queried  is found in the map; otherwise, we print `Not found`.
-
-*Query 0:* `sam`
-Sam is one of the keys in our dictionary, so we print `sam=99912222`.
-
-*Query 1:* `edward`
-Edward is not one of the keys in our dictionary, so we print `Not found`.
-
-*Query 2:* `harry`
-Harry is one of the keys in our dictionary, so we print `harry=12299933`.
+![8](pic/8.png)
 
 ```java
 //Complete this code or write your own from scratch
@@ -170,55 +346,7 @@ class Solution{
 
 ## 9. Recursion 3
 
-**Objective**
-Today, we're learning and practicing an algorithmic concept called *Recursion*. Check out the [Tutorial](https://www.hackerrank.com/challenges/30-recursion/tutorial) tab for learning materials and an instructional video!
-
-**Recursive Method for Calculating Factorial**
-$$
-factorial(N) =\begin{cases}
-1& \text{N $\leq$ 1}\\
-N*factorial(N-1)& \text{otherwise}
-\end{cases}
-$$
-**Task**
-Write a *factorial* function that takes a positive integer N,  as a parameter and prints the result of  N!( N factorial).
-
-**Note:** If you fail to use recursion or fail to name your recursive function *factorial* or *Factorial*, you will get a score of  0.
-
-**Input Format**
-
-A single integer N,  (the argument to pass to *factorial*).
-
-**Constraints**
-
-- 2  $ \leq$ N $\leq$ 12
-- Your submission must contain a recursive function named *factorial*.
-
-**Output Format**
-
-Print a single integer denoting N .
-
-**Sample Input**
-
-```
-3
-```
-
-**Sample Output**
-
-```
-6
-```
-
-**Explanation**
-
-Consider the following steps:
-
-1. $factorial(3)  =  3 \times factorial(2);$
-2. $factorial(2)  =  2 \times factorial(1);$
-3. $factorial(1)  =  1;$
-
-From steps  2 and 3 , we can say $factorial(2)  =  2 \times 1;$; then when we apply the value from $factorial(2);$ to step 1, we get $factorial(3)  =  3 \times 2;$ . Thus, we print  6 as our answer.
+![9](pic/9.png)
 
 ```java
 import java.io.*;
@@ -265,55 +393,7 @@ public class Solution {
 
 ## 10. Binary Numbers
 
-**Objective**
-Today, we're working with binary numbers. Check out the [Tutorial](https://www.hackerrank.com/challenges/30-binary-numbers/tutorial) tab for learning materials and an instructional video!
-
-**Task**
-Given a base-**10** integer, **n**, convert it to binary (base-**2**). Then find and print the base- integer denoting the maximum number of consecutive **1**'s in **n**'s binary representation.
-
-**Input Format**
-
-A single integer,**n** .
-
-**Constraints**
-
-- 1 $\leq$ n $\leq 10^6$
-
-**Output Format**
-
-Print a single base-10 integer denoting the maximum number of consecutive 1's in the binary representation of  n.
-
-**Sample Input 1**
-
-```
-5
-```
-
-**Sample Output 1**
-
-```
-1
-```
-
-**Sample Input 2**
-
-```
-13
-```
-
-**Sample Output 2**
-
-```
-2
-```
-
-**Explanation**
-
-*Sample Case 1:*
-The binary representation of 5 is 101, so the maximum number of consecutive 1's is 1.
-
-*Sample Case 2:*
-The binary representation of 13 is 1101, so the maximum number of consecutive 1's is 2.
+![10](pic/10.png)
 
 ```java
 import java.io.*;
@@ -369,93 +449,7 @@ public class Solution {
 
 ## 11. 2D Arrays
 
-**Objective**
-Today, we're building on our knowledge of *Arrays* by adding another dimension. Check out the [Tutorial](https://www.hackerrank.com/challenges/30-2d-arrays/tutorial) tab for learning materials and an instructional video!
-
-**Context**
-Given a  $6 \times 6$ *2D Array*, **A**:
-
-```
-1 1 1 0 0 0
-0 1 0 0 0 0
-1 1 1 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-```
-
-We define an hourglass in A to be a subset of values with indices falling in this pattern in A's graphical representation:
-
-```
-a b c
-  d
-e f g
-```
-
-There are 16 hourglasses in **A**, and an *hourglass sum* is the sum of an hourglass' values.
-
-**Task**
-Calculate the hourglass sum for every hourglass in A, then print the *maximum* hourglass sum.
-
-**Input Format**
-
-There are  6 lines of input, where each line contains 6 space-separated integers describing *2D Array* A; every value in A  will be in the inclusive range of  -9 to 9.
-
-**Constraints**
-
-- $-9 \leq A[i][j] \leq 9$
-- $0 \leq i,j  \leq 9$
-
-**Output Format**
-
-Print the largest (maximum) hourglass sum found in  A.
-
-**Sample Input**
-
-```
-1 1 1 0 0 0
-0 1 0 0 0 0
-1 1 1 0 0 0
-0 0 2 4 4 0
-0 0 0 2 0 0
-0 0 1 2 4 0
-```
-
-**Sample Output**
-
-```
-19
-```
-
-**Explanation**
-
-A contains the following hourglasses:
-
-```
-1 1 1   1 1 0   1 0 0   0 0 0
-  1       0       0       0
-1 1 1   1 1 0   1 0 0   0 0 0
-
-0 1 0   1 0 0   0 0 0   0 0 0
-  1       1       0       0
-0 0 2   0 2 4   2 4 4   4 4 0
-
-1 1 1   1 1 0   1 0 0   0 0 0
-  0       2       4       4
-0 0 0   0 0 2   0 2 0   2 0 0
-
-0 0 2   0 2 4   2 4 4   4 4 0
-  0       0       2       0
-0 0 1   0 1 2   1 2 4   2 4 0
-```
-
-The hourglass with the maximum sum (19) is:
-
-```
-2 4 4
-  2
-1 2 4
-```
+![11](pic/11.png)
 
 ```java
 import java.io.*;
@@ -513,59 +507,7 @@ public class Solution {
 
 ## 12. Inheritance
 
-**Objective**
-Today, we're delving into Inheritance. Check out the attached tutorial for learning materials and an instructional video!
-
-**Task**
-You are given two classes, *Person* and *Student*, where *Person* is the base class and *Student* is the derived class. Completed code for *Person* and a declaration for *Student* are provided for you in the editor. Observe that *Student* inherits all the properties of *Person*.
-
-Complete the *Student* class by writing the following:
-
-- A Student  class constructor, which has 4 parameters: 
-  1. A string, `firstName`.
-  2. A string,`lastName` .
-  3. An integer, `id`.
-  4. An integer array (or vector) of test scores, `scores`.
-- A *char calculate()* method that calculates a Student object's average and returns the grade character representative of their calculated average:
-
-![Grading.png](https://s3.amazonaws.com/hr-challenge-images/17165/1458142706-3073bc9143-Grading.png)
-
-**Input Format**
-
-The locked stub code in your editor calls your *Student* class constructor and passes it the necessary arguments. It also calls the *calculate* method (which takes no arguments).
-
-*You are not responsible for reading the following input from stdin:*
-The first line contains , `firstName,lastname`, and `id`, respectively. The second line contains the number of test scores. The third line of space-separated integers describes `scores` .
-
-**Constraints**
-
-- $1 \leq |firstName|,|lastName| \leq 10$
-- $|id| \equiv 7$
-- $0 \leq score,average \leq 100$
-
-**Output Format**
-
-*This is handled by the locked stub code in your editor.* Your output will be correct if your *Student* class constructor and *calculate()* method are properly implemented.
-
-**Sample Input**
-
-```
-Heraldo Memelli 8135627
-2
-100 80
-```
-
-**Sample Output**
-
-```
- Name: Memelli, Heraldo
- ID: 8135627
- Grade: O
-```
-
-**Explanation**
-
-This student had  2 scores to average 100 and 80 . The student's average grade is $\frac{100+80}{2} = 90$. An average grade of  90 corresponds to the letter grade O , so our *calculate()* method should return the character`'O'`.
+![12](pic/12.png)
 
 ```java
 import java.util.*;
@@ -654,7 +596,7 @@ class Solution {
 
 ## 13. Abstract Classes
 
-![1574546103037](C:\Users\Cai xiyu\learngit\hackerranck\1574546103037.png)
+![13](pic/13.png)
 
 ```java
 import java.util.*;
@@ -724,7 +666,7 @@ public class Solution {
 
 ## 14. Scope
 
-![1574546238235](C:\Users\Cai xiyu\learngit\hackerranck\1574546238235.png)
+![14](pic/14.png)
 
 ```java
 import java.io.*;
@@ -777,6 +719,10 @@ public class Solution {
     }
 }
 ```
+
+## 15.  Linked List
+
+![15](pic/15.png)
 
 
 
