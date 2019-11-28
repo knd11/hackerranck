@@ -1,6 +1,6 @@
 ## 0. Hello,World
 
-![0](pic/0.png)
+![0](hackerrank_pic/0.png)
 
 ```java
 import java.io.*;
@@ -30,7 +30,7 @@ public class Solution {
 
 ## 1. Data Types
 
-![1](pic/1.png)
+![1](hackerrank_pic/1.png)
 
 ```java
 import java.io.*;
@@ -84,7 +84,7 @@ public class Solution {
 
 ## 2. Operators
 
-![2](pic/2.png)
+![2](hackerrank_pic/2.png)
 
 ```java
 import java.io.*;
@@ -124,7 +124,7 @@ public class Solution {
 
 ## 3. Intro to Conditional Statements
 
-![3](pic/3.png)
+![3](hackerrank_pic/3.png)
 
 ```java
 import java.io.*;
@@ -161,7 +161,7 @@ public class Solution {
 
 ## 4. Class vs. Instance
 
-![4](pic/4.png)
+![4](hackerrank_pic/4.png)
 
 ```java
 import java.io.*;
@@ -216,7 +216,7 @@ public class Person {
 
 ## 5. Loops
 
-![5](pic/5.png)
+![5](hackerrank_pic/5.png)
 
 ```java
 import java.io.*;
@@ -247,7 +247,7 @@ public class Solution {
 
 ## 6. Let's Review
 
-![6](pic/6.png)
+![6](hackerrank_pic/6.png)
 
 ```python
 # Enter your code here. Read input from STDIN. Print output to STDOUT
@@ -270,7 +270,7 @@ for j in range(0,ii):
 
 ## 7. Arrays
 
-![7](pic/7.png)
+![7](hackerrank_pic/7.png)
 
 ```Java
 import java.io.*;
@@ -311,7 +311,7 @@ public class Solution {
 
 ## 8.  Dictionaries and Maps
 
-![8](pic/8.png)
+![8](hackerrank_pic/8.png)
 
 ```java
 //Complete this code or write your own from scratch
@@ -346,7 +346,7 @@ class Solution{
 
 ## 9. Recursion 3
 
-![9](pic/9.png)
+![9](hackerrank_pic/9.png)
 
 ```java
 import java.io.*;
@@ -393,7 +393,7 @@ public class Solution {
 
 ## 10. Binary Numbers
 
-![10](pic/10.png)
+![10](hackerrank_pic/10.png)
 
 ```java
 import java.io.*;
@@ -449,7 +449,7 @@ public class Solution {
 
 ## 11. 2D Arrays
 
-![11](pic/11.png)
+![11](hackerrank_pic/11.png)
 
 ```java
 import java.io.*;
@@ -507,7 +507,7 @@ public class Solution {
 
 ## 12. Inheritance
 
-![12](pic/12.png)
+![12](hackerrank_pic/12.png)
 
 ```java
 import java.util.*;
@@ -596,7 +596,7 @@ class Solution {
 
 ## 13. Abstract Classes
 
-![13](pic/13.png)
+![13](hackerrank_pic/13.png)
 
 ```java
 import java.util.*;
@@ -666,7 +666,7 @@ public class Solution {
 
 ## 14. Scope
 
-![14](pic/14.png)
+![14](hackerrank_pic/14.png)
 
 ```java
 import java.io.*;
@@ -722,7 +722,7 @@ public class Solution {
 
 ## 15.  Linked List
 
-![15](pic/15.png)
+![15](hackerrank_pic/15.png)
 
 ```java
 import java.io.*;
@@ -779,7 +779,7 @@ class Solution {
 
 ## 17. More Exceptions
 
-![17](Leetcode_pic/17.png)
+![17](hackerrank_pic/17.png)
 
 ```java
 import java.util.*;
@@ -820,6 +820,8 @@ class Solution{
 ```
 
 ## 18. Queues and Stacks
+
+![18](hackerrank_pic/18.png)
 
 ```java
 import java.io.*;
@@ -880,6 +882,49 @@ public class Solution {
 ```
 
 
+
+## 19. Interfaces
+
+![19](hackerrank_pic/19.png)
+
+```java
+import java.io.*;
+import java.util.*;
+
+interface AdvancedArithmetic{
+   int divisorSum(int n);
+}
+class Calculator implements AdvancedArithmetic {
+    public int divisorSum(int n) {
+        int sum = 0;
+        for(int i=1;i<=n;i++){
+            for(int j=i;j<=n;j++){
+                if(i*j==n){
+                    if(i==j)
+                        sum = sum + i;
+                    else
+                        sum = sum + i + j;  
+                }      
+            }
+        }
+    return sum;    
+    }
+}
+
+class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        scan.close();
+        
+      	AdvancedArithmetic myCalculator = new Calculator(); 
+        int sum = myCalculator.divisorSum(n);
+        System.out.println("I implemented: " + myCalculator.getClass().getInterfaces()[0].getName() );
+        System.out.println(sum);
+    }
+}
+```
 
 
 
