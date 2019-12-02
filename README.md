@@ -1082,7 +1082,89 @@ class Solution{
 
 
 
-## 23.
+## 23. BST Level-Order Traversal
+
+![23](hackerrank_pic/23.png)
+
+```java
+import java.util.*;
+import java.io.*;
+class Node{
+    Node left,right;
+    int data;
+    Node(int data){
+        this.data=data;
+        left=right=null;
+    }
+}
+class Solution{
+
+static void levelOrder(Node root){
+      //Write your code here
+        //生成一个队列
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);  //根结点入队
+        //循环遍历整个队列
+        while (!q.isEmpty()) {
+        //获取队列头部的元素，并删除该元素
+        Node cur = q.remove();
+        System.out.print(cur.data + " ");
+        //左结点非空则入队，右结点非空则入队
+        if (cur.left != null)
+            q.add(cur.left);
+        if (cur.right != null)
+            q.add(cur.right);
+        }
+        
+    }
+
+public static Node insert(Node root,int data){
+        if(root==null){
+            return new Node(data);
+        }
+        else{
+            Node cur;
+            if(data<=root.data){
+                cur=insert(root.left,data);
+                root.left=cur;
+            }
+            else{
+                cur=insert(root.right,data);
+                root.right=cur;
+            }
+            return root;
+        }
+    }
+    public static void main(String args[]){
+            Scanner sc=new Scanner(System.in);
+            int T=sc.nextInt();
+            Node root=null;
+            while(T-->0){
+                int data=sc.nextInt();
+                root=insert(root,data);
+            }
+            levelOrder(root);
+        }	
+}
+```
+
+
+
+
+
+## 24.
+
+## 25.
+
+## 26.
+
+## 27.
+
+## 28.
+
+## 29.
+
+## 30.
 
 
 
