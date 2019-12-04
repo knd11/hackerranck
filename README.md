@@ -1224,11 +1224,40 @@ class Solution
     }
 ```
 
+## 25. Running Time and Complexity
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        
+        for(int i=0;i<n;i++){
+            String str = " ";
+            int number = scan.nextInt();
+            for(int j=2;j<=Math.sqrt(number);j++){
+                if(number%j==0){
+                    str = "Not prime";
+                }
+            }
+            if(str == "Not prime" || number == 1)
+                System.out.println("Not prime");
+            else
+                System.out.println("Prime");
+
+        }
+    }
+}
 
 
+```
 
 
-## 25.
 
 ## 26.
 
