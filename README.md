@@ -1257,9 +1257,44 @@ public class Solution {
 
 ```
 
+## 26. Nested Logic
+
+![26](hackerrank_pic/26.png)
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+
+        int Aday = scan.nextInt();
+        int Amonth = scan.nextInt();
+        int Ayear = scan.nextInt();
+
+        int Dday = scan.nextInt();
+        int Dmonth = scan.nextInt();
+        int Dyear = scan.nextInt();
+        scan.close();
+
+        int daylate = Aday - Dday;
+        int monthlate = Amonth - Dmonth;
+        int yearlate = Ayear- Dyear;
+
+        System.out.println(yearlate>0?10000:monthlate>0 && yearlate==0?500*monthlate:daylate>0 && monthlate==0 && yearlate==0?15*daylate:0);
+
+    }
+}
+```
 
 
-## 26.
+
+
+
+
 
 ## 27.
 
