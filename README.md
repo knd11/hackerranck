@@ -1436,15 +1436,108 @@ public class Solution {
 }
 ```
 
+## 28. RegEx, Patterns, and Intro to Databases
+
+![28](hackerrank_pic/28-1575782754828.png)
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        List<String> list = new ArrayList();
+        
+        for (int NItr = 0; NItr < N; NItr++) {
+            String[] firstNameEmailID = scanner.nextLine().split(" ");
+
+            String firstName = firstNameEmailID[0];
+
+            String emailID = firstNameEmailID[1];
+            
+            // This will match a sequence of 1 or more uppercase and lowercase English letters as well as spaces
+        String emailRegEx = ".+@gmail\\.com$";;
+
+        // Create a Pattern object (compiled RegEx) and save it as 'p'
+        Pattern p = Pattern.compile(emailRegEx);
+
+        // We need a Matcher to match our compiled RegEx to a String
+        Matcher m = p.matcher(emailID);
+
+        // if our Matcher finds a match
+        if( m.find() ) {
+            list.add(firstName);
+        }
+        }
+        Collections.sort(list);
+        for (String name : list){
+            System.out.println(name);
+        }
+        scanner.close();
+        
+    }
+}
+```
+
+## 29. Bitwise AND
+
+![29](hackerrank_pic/29.png)
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int t = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int tItr = 0; tItr < t; tItr++) {
+            String[] nk = scanner.nextLine().split(" ");
+
+            int n = Integer.parseInt(nk[0]);
+
+            int k = Integer.parseInt(nk[1]);
+
+            
+            if(((k-1)|k) > n && k%2==0)
+                System.out.println(k-2);
+            else
+                System.out.println(k-1);
+
+        }
+        scanner.close();
+    }
+}
+```
 
 
 
 
-## 28.
 
-## 29.
 
-## 30.
 
 
 
