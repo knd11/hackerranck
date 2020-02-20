@@ -1,9 +1,156 @@
 [TOC]
 
 
+
+# Java
+
+## Scanner的使用
+
+[4](#4.Java Stdin and Stdout II)	[9](#9. Java End-of-file)	
+
+已知：Scanner scan = new Scanner(System.in);
+
+```java
+scan.nextInt() //输入内容的下一个整数，下一个指用空格隔开的下一个
+scan.nextDouble()//输入内容的下一个浮点数，下一个指用空格隔开的下一个
+scan.next() //输入内容的下一个字符串，下一个指用空格隔开的下一个
+scan.nextLine()//输入内容的下一行
+scan.hasNext() //判断是否还有下一个输入
+```
+
+## 控制输出
+
+[5](#5. Java Output Formatting)
+
+`System.out.printf("%-15s%03d\n",s1,x);`
+
+控制字符串长度为15，数字长度为3
+
+
+
+## 例题
+
+### 4.Java Stdin and Stdout II
+
+![java_1](pic/java_4.png)
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+        double d = scan.nextDouble();
+
+        scan.nextLine();
+        String s = scan.nextLine();
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
+```
+
+### 5. Java Output Formatting
+
+![java_1](pic/java_5.png)
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("================================");
+
+            for(int i=0;i<3;i++)
+            {
+                String s1=sc.next();
+                int x=sc.nextInt();
+                //Complete this line
+                System.out.printf("%-15s%03d\n",s1,x);
+
+                
+            }
+            System.out.println("================================");
+
+    }
+}
+```
+
+### 7. Java Loops II
+
+![java_7](pic/java_7.png)
+
+```java
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();  
+        int j;    
+
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            double temp = 0;
+
+            for (j = 0; j < n; j++) {
+                temp = temp + Math.pow(2,j)*b;
+                System.out.print(a + (int)temp + " ");
+            } 
+            System.out.print("\n");
+        }
+
+        in.close();
+    }
+}
+```
+
+
+
+### 9. Java End-of-file
+
+![java_9](pic/java_9.png)
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int i = 0;
+
+        while(scan.hasNext()){
+            String text = scan.nextLine();
+            i++;
+            System.out.println( i + " " + text);
+        }
+    }
+}
+```
+
+
+
+### 9.
+
+### 10.
+
+# 30 Days of Code
+
 ## 0. Hello,World
 
-![0](hackerrank_pic/0.png)
+![0](pic/0.png)
 
 ```java
 import java.io.*;
@@ -33,7 +180,7 @@ public class Solution {
 
 ## 1. Data Types
 
-![1](hackerrank_pic/1.png)
+![1](pic/1.png)
 
 ```java
 import java.io.*;
@@ -87,7 +234,7 @@ public class Solution {
 
 ## 2. Operators
 
-![2](hackerrank_pic/2.png)
+![2](pic/2.png)
 
 ```java
 import java.io.*;
@@ -127,7 +274,7 @@ public class Solution {
 
 ## 3. Intro to Conditional Statements
 
-![3](hackerrank_pic/3.png)
+![3](pic/3.png)
 
 ```java
 import java.io.*;
@@ -164,7 +311,7 @@ public class Solution {
 
 ## 4. Class vs. Instance
 
-![4](hackerrank_pic/4.png)
+![4](pic/4.png)
 
 ```java
 import java.io.*;
@@ -219,7 +366,7 @@ public class Person {
 
 ## 5. Loops
 
-![5](hackerrank_pic/5.png)
+![5](pic/5.png)
 
 ```java
 import java.io.*;
@@ -250,7 +397,7 @@ public class Solution {
 
 ## 6. Let's Review
 
-![6](hackerrank_pic/6.png)
+![6](pic/6.png)
 
 ```python
 # Enter your code here. Read input from STDIN. Print output to STDOUT
@@ -273,7 +420,7 @@ for j in range(0,ii):
 
 ## 7. Arrays
 
-![7](hackerrank_pic/7.png)
+![7](pic/7.png)
 
 ```Java
 import java.io.*;
@@ -314,7 +461,7 @@ public class Solution {
 
 ## 8.  Dictionaries and Maps
 
-![8](hackerrank_pic/8.png)
+![8](pic/8.png)
 
 ```java
 //Complete this code or write your own from scratch
@@ -349,7 +496,7 @@ class Solution{
 
 ## 9. Recursion 3
 
-![9](hackerrank_pic/9.png)
+![9](pic/9.png)
 
 ```java
 import java.io.*;
@@ -396,7 +543,7 @@ public class Solution {
 
 ## 10. Binary Numbers
 
-![10](hackerrank_pic/10.png)
+![10](pic/10.png)
 
 ```java
 import java.io.*;
@@ -452,7 +599,7 @@ public class Solution {
 
 ## 11. 2D Arrays
 
-![11](hackerrank_pic/11.png)
+![11](pic/11.png)
 
 ```java
 import java.io.*;
@@ -510,7 +657,7 @@ public class Solution {
 
 ## 12. Inheritance
 
-![12](hackerrank_pic/12.png)
+![12](pic/12.png)
 
 ```java
 import java.util.*;
@@ -599,7 +746,7 @@ class Solution {
 
 ## 13. Abstract Classes
 
-![13](hackerrank_pic/13.png)
+![13](pic/13.png)
 
 ```java
 import java.util.*;
@@ -669,7 +816,7 @@ public class Solution {
 
 ## 14. Scope
 
-![14](hackerrank_pic/14.png)
+![14](pic/14.png)
 
 ```java
 import java.io.*;
@@ -725,7 +872,7 @@ public class Solution {
 
 ## 15.  Linked List
 
-![15](hackerrank_pic/15.png)
+![15](pic/15.png)
 
 ```java
 import java.io.*;
@@ -780,7 +927,7 @@ class Solution {
 
 ## 16. Exceptions - String to Integer
 
-![16](hackerrank_pic/16.png)
+![16](pic/16.png)
 
 
 
@@ -811,7 +958,7 @@ public class Solution {
 
 ## 17. More Exceptions
 
-![17](hackerrank_pic/17.png)
+![17](pic/17.png)
 
 ```java
 import java.util.*;
@@ -853,7 +1000,7 @@ class Solution{
 
 ## 18. Queues and Stacks
 
-![18](hackerrank_pic/18.png)
+![18](pic/18.png)
 
 ```java
 import java.io.*;
@@ -917,7 +1064,7 @@ public class Solution {
 
 ## 19. Interfaces
 
-![19](hackerrank_pic/19.png)
+![19](pic/19.png)
 
 ```java
 import java.io.*;
@@ -960,7 +1107,7 @@ class Solution {
 
 ## 20. Sorting
 
-![20](hackerrank_pic/20.png)
+![20](pic/20.png)
 
 ```java
 import java.io.*;
@@ -1002,7 +1149,7 @@ public class Solution {
 
 ## 21. Generics
 
-![21](hackerrank_pic/21.png)
+![21](pic/21.png)
 
 ```java
 import java.util.*;
@@ -1053,7 +1200,7 @@ public class Generics {
 
 ## 22.  Binary Search Trees
 
-![22](hackerrank_pic/22.png)
+![22](pic/22.png)
 
 ```java
 import java.util.*;
@@ -1113,7 +1260,7 @@ class Solution{
 
 ## 23. BST Level-Order Traversal
 
-![23](hackerrank_pic/23.png)
+![23](pic/23.png)
 
 ```java
 import java.util.*;
@@ -1179,7 +1326,7 @@ public static Node insert(Node root,int data){
 
 ## 24. More Linked Lists
 
-![24](hackerrank_pic/24.png)
+![24](pic/24.png)
 
 ```java
 import java.io.*;
@@ -1288,7 +1435,7 @@ public class Solution {
 
 ## 26. Nested Logic
 
-![26](hackerrank_pic/26.png)
+![26](pic/26.png)
 
 ```java
 import java.io.*;
@@ -1321,7 +1468,7 @@ public class Solution {
 
 ## 27. Testing
 
-![27](hackerrank_pic/27.png)
+![27](pic/27.png)
 
 ```java
 import java.util.*;
@@ -1438,7 +1585,7 @@ public class Solution {
 
 ## 28. RegEx, Patterns, and Intro to Databases
 
-![28](hackerrank_pic/28-1575782754828.png)
+![28](pic/28-1575782754828.png)
 
 ```java
 import java.io.*;
@@ -1493,7 +1640,7 @@ public class Solution {
 
 ## 29. Bitwise AND
 
-![29](hackerrank_pic/29.png)
+![29](pic/29.png)
 
 ```java
 import java.io.*;
