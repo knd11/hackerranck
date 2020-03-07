@@ -26,6 +26,33 @@ scan.hasNext() //判断是否还有下一个输入
 
 控制字符串长度为15，数字长度为3
 
+## String 和 int 间的转换
+
+[11](#11. Java Int to String)
+
+```java
+int n = in .nextInt();
+String s = String.valueOf(n);//int --> String
+int n1 = Integer.parseInt(s);//String --> int
+```
+
+## 时间
+
+[12](#12. Java Date and Time)
+
+```java
+calendar.set(year,month-1,day);
+int n = calendar.get(Calendar.DAY_OF_WEEK);
+String[] Day ={"SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"};
+System.out.println(Day[n - 1]);
+```
+
+注意set的顺序，年月日，month要==减1==
+
+
+
+
+
 
 
 ## 例题
@@ -142,7 +169,7 @@ public class Solution {
 
 ### 10. Java Static Initializer Block
 
-![10](C:/Users/Cai xiyu/Downloads/10.png)
+![java_10](pic/java_10.png)
 
 ```java
 import java.io.*;
@@ -180,9 +207,29 @@ public static void main(String[] args){
 }//end of class
 ```
 
+### 11. Java Int to String
+
+![java_11](pic/java_11.png)
+
+```java
+String s = String.valueOf(n);//int --> String
+```
 
 
-### 10.
+
+### 12. Java Date and Time
+
+```java
+public static String findDay(int month, int day, int year) {
+      Calendar calendar = Calendar.getInstance();
+      calendar.set(year,month-1,day);
+      int n = calendar.get(Calendar.DAY_OF_WEEK);
+      String[] Day ={"SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"};
+        return Day[n - 1];
+}
+```
+
+
 
 # 30 Days of Code
 
